@@ -1,1 +1,1 @@
-﻿var module = angular.module("baasic.baasicAppSettings", ["baasic.baasicApi"]);
+﻿var module = angular.module("baasic.appSettings", ["baasic.api"]);
