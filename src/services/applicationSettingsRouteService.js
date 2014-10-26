@@ -3,8 +3,8 @@
     module.service("baasicApplicationSettingsRouteService", ["baasicUriTemplateService",
         function (uriTemplateService) {
             return {
-                get: uriTemplateService.parse("application/{?embed,fields}"),
-                update: uriTemplateService.parse("application/"),				
+                get: uriTemplateService.parse("applications/{?embed,fields}"),
+                update: uriTemplateService.parse("applications/"),				
                 parse: uriTemplateService.parse
             };
         }]);
