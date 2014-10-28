@@ -18,8 +18,8 @@
         module.service("baasicApplicationSettingsService", ["baasicApiHttp", "baasicApiService", "baasicConstants", "baasicApplicationSettingsRouteService", function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
                 routeService: applicationSettingsRouteService,
-                get: function (data) {
-                    return baasicApiHttp.get(applicationSettingsRouteService.get.expand(baasicApiService.getParams(data))).success(function (appSettings) {
+                get: function (options) {
+                    return baasicApiHttp.get(applicationSettingsRouteService.get.expand(baasicApiService.getParams(options))).success(function (appSettings) {
                         appSettings.origins = appSettings.origins || [];
                     });
                 },
