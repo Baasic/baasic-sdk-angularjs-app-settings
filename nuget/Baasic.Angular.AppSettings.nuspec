@@ -9,6 +9,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>AngularJS application settings module allows you to manage settings through the Baasic API.</description>
         <summary />
+		<projectUrl>https://github.com/Baasic/baasic-sdk-angularjs-app-settings</projectUrl>
         <copyright>Mono Ltd.</copyright>
         <language>en-US</language>
         <tags>Javascript, Baasic, AngularJs, Settings</tags>
