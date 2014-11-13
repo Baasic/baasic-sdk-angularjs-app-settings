@@ -25,11 +25,23 @@
                 },
                 update: function (data) {
                     var params = baasicApiService.updateParams(data);
-                    return baasicApiHttp.put(params[baasicConstants.modelPropertyName].links('put').href, params[baasicConstants.modelPropertyName]);
+                    var model = params[baasicConstants.modelPropertyName];
+                    return baasicApiHttp.put(model.links('put').href, model);
                 },
                 remove: function (data) {
                     var params = baasicApiService.removeParams(data);
-                    return baasicApiHttp.delete(params[baasicConstants.modelPropertyName].links('delete').href);
+                    var model = params[baasicConstants.modelPropertyName];
+                    return baasicApiHttp.delete(model.links('delete').href);
+                },
+                activate: function (data) {
+                    var params = baasicApiService.updateParams(data);
+                    var model = params[baasicConstants.modelPropertyName];
+                    return baasicApiHttp.put(model.links('activate').href);
+                },
+                deactivate: function (data) {
+                    var params = baasicApiService.updateParams(data);
+                    var model = params[baasicConstants.modelPropertyName];
+                    return baasicApiHttp.put(model.links('deactivate').href);
                 }
             };
         }]);
