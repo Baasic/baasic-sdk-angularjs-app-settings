@@ -84,7 +84,7 @@ Baasic App Settings Route Service provides Baasic route templates which can then
 
 Here is a list of all the `applicationSettingsRouteService` functions:
 
-* `get`, `find`, `create`
+* `get`, `update`
 * `parse` - Provides direct access to the `uriTemplateService`
 
 URI templates can be expanded manually like this:
