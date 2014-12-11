@@ -50,22 +50,16 @@ Baasic App Settings Service provides an easy way to consume Baasic App Settings 
 Here are a few examples on how to use the `applicationSettingsService`:
 
 ```javascript
-TODO: ADD A VALID EXAMPLE
-
-var id = "73a22b5d-e5ef-44f2-9c81-a3fb01063f86";
-baasiAapplicationSettingsService.get(id)
+baasiAapplicationSettingsService.get()
     .success(function(data) {
-        // data variable contains a single application settings object that match the key/id
+        // data variable contains application settings object
     });
 ```
 
 ```javascript
-TODO: ADD A VALID EXAMPLE
-
-var options = { searchQuery: "myQuery", page: 4, rpp: 3 };
-baasiAapplicationSettingsService.find(options)
+baasiAapplicationSettingsService.deactivate(appSettingsObject)
     .success(function(data) {
-        // data variable contains a collection of application settings objects that match the filtering parameters
+        // on application deactivated
     });
 ```
 
