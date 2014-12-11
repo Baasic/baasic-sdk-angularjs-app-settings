@@ -85,7 +85,7 @@ URI templates can be expanded manually like this:
 
 ```javascript
 var params = { searchQuery: "myQuery", page: 4, rpp: 3 };
-var uri = applicationSettingsRouteService.find.expand(params);
+var uri = baasicApplicationSettingsRouteService.find.expand(params);
 // uri will yield "/applications/?searchQuery=myQuery&page=4&rpp=3"
 ```
 
