@@ -1,1 +1,3 @@
-﻿var module = angular.module("baasic.appSettings", ["baasic.api"]);
+﻿/* exported module */
+
+var module = angular.module('baasic.appSettings', ['baasic.api']);

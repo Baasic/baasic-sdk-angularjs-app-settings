@@ -1,21 +1,23 @@
-(function (angular, undefined) {
-    var module = angular.module("baasic.appSettings", ["baasic.api"]);
+(function (angular, undefined) { /* exported module */
 
-    module.config(["$provide", function config($provide) {}]);
+    var module = angular.module('baasic.appSettings', ['baasic.api']);
+
+    /* globals module */
 
     (function (angular, module, undefined) {
-        "use strict";
-        module.service("baasicApplicationSettingsRouteService", ["baasicUriTemplateService", function (uriTemplateService) {
+        'use strict';
+        module.service('baasicApplicationSettingsRouteService', ['baasicUriTemplateService', function (uriTemplateService) {
             return {
-                get: uriTemplateService.parse("applications/{?embed,fields}"),
-                update: uriTemplateService.parse("applications/"),
+                get: uriTemplateService.parse('applications/{?embed,fields}'),
+                update: uriTemplateService.parse('applications/'),
                 parse: uriTemplateService.parse
             };
         }]);
-    }(angular, module));
+    }(angular, module)); /* globals module */
+
     (function (angular, module, undefined) {
-        "use strict";
-        module.service("baasicApplicationSettingsService", ["baasicApiHttp", "baasicApiService", "baasicConstants", "baasicApplicationSettingsRouteService", function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
+        'use strict';
+        module.service('baasicApplicationSettingsService', ['baasicApiHttp', 'baasicApiService', 'baasicConstants', 'baasicApplicationSettingsRouteService', function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
                 routeService: applicationSettingsRouteService,
                 get: function (options) {

@@ -1,6 +1,8 @@
-﻿(function (angular, module, undefined) {
-    "use strict";
-    module.service("baasicApplicationSettingsService", ["baasicApiHttp", "baasicApiService", "baasicConstants", "baasicApplicationSettingsRouteService",
+﻿/* globals module */
+
+(function (angular, module, undefined) {
+    'use strict';
+    module.service('baasicApplicationSettingsService', ['baasicApiHttp', 'baasicApiService', 'baasicConstants', 'baasicApplicationSettingsRouteService',
         function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
 				routeService: applicationSettingsRouteService,                
