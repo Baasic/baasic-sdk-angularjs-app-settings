@@ -1,4 +1,6 @@
-﻿/** 
+﻿/* exported module */
+
+/** 
  * @overview The angular.module is a global place for creating, registering or retrieving modules. All modules should be registered in an application using this mechanism.
  * @copyright (c) 2015 Mono-Software
  * @license MIT
@@ -25,4 +27,4 @@
 }
   (MyApp.Modules.Main = {})); 
 */
-var module = angular.module("baasic.appSettings", ["baasic.api"]);
+var module = angular.module('baasic.appSettings', ['baasic.api']);
