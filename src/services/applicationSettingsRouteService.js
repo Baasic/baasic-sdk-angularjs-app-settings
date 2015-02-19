@@ -15,13 +15,13 @@
         function (uriTemplateService) {
             return {
                 /**
-                * Parses get route, this route doesn't expose any properties.
+                * Parses get route; this route doesn't expose any properties.
                 * @method        
                 * @example baasicLoginRouteService.get.expand({});               
                 **/ 			
                 get: uriTemplateService.parse('applications/{?embed,fields}'),
                 /**
-                * Parses update route, this route doesn't expose any properties.
+                * Parses update route; this route doesn't expose any properties.
                 * @method        
                 * @example baasicLoginRouteService.update.expand({});               
                 **/ 					
