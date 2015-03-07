@@ -57,7 +57,7 @@ baasicApplicationSettingsService.update(existingResource)
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 
-baasicUserService.remove(existingResource)
+baasicApplicationSettingsService.remove(existingResource)
 .success(function (data) {
   // perform success action here
 })
@@ -75,7 +75,7 @@ baasicUserService.remove(existingResource)
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 
-baasicUserService.activate(existingResource)
+baasicApplicationSettingsService.activate(existingResource)
 .success(function (data) {
   // perform success action here
 })
@@ -93,7 +93,7 @@ baasicUserService.activate(existingResource)
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 
-baasicUserService.deactivate(existingResource)
+baasicApplicationSettingsService.deactivate(existingResource)
 .success(function (data) {
   // perform success action here
 })

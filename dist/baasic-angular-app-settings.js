@@ -47,19 +47,19 @@
                 /**
                  * Parses get route; this route doesn't expose any properties.
                  * @method        
-                 * @example baasicLoginRouteService.get.expand({});               
+                 * @example baasicApplicationSettingsRouteService.get.expand({});               
                  **/
                 get: uriTemplateService.parse('applications/{?embed,fields}'),
                 /**
                  * Parses update route; this route doesn't expose any properties.
                  * @method        
-                 * @example baasicLoginRouteService.update.expand({});               
+                 * @example baasicApplicationSettingsRouteService.update.expand({});               
                  **/
                 update: uriTemplateService.parse('applications/'),
                 /**
                  * Parses and expands URI templates based on [RFC6570](http://tools.ietf.org/html/rfc6570) specifications. For more information please visit the project [github](https://github.com/Baasic/uritemplate-js) page.
                  * @method
-                 * @example uriTemplateService.parse("route/{?embed,fields,options}").expand({embed: "embeddedResource"});
+                 * @example baasicApplicationSettingsRouteService.parse("route/{?embed,fields,options}").expand({embed: "embeddedResource"});
                  **/
                 parse: uriTemplateService.parse
             };
@@ -121,7 +121,7 @@
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 baasicUserService.remove(existingResource)
+                 baasicApplicationSettingsService.remove(existingResource)
                  .success(function (data) {
                  // perform success action here
                  })
@@ -139,7 +139,7 @@
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 baasicUserService.activate(existingResource)
+                 baasicApplicationSettingsService.activate(existingResource)
                  .success(function (data) {
                  // perform success action here
                  })
@@ -157,7 +157,7 @@
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 baasicUserService.deactivate(existingResource)
+                 baasicApplicationSettingsService.deactivate(existingResource)
                  .success(function (data) {
                  // perform success action here
                  })
