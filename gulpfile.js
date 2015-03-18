@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('docs', function() {
-  docgen.generateBaasicDocs('src', 'wiki', 'Baasic App. Settings Navigation', ['config.js']);
+  docgen.generateBaasicDocs('src', 'wiki', 'Baasic App. Settings Navigation', ['config.js'], ['home.md']);
 });
 
 

@@ -1,10 +1,7 @@
 ﻿/* globals module */
 /**
  * @module baasicApplicationSettingsService
-**/
-
-/** 
- * @overview Application settings service.
+ * @description Baasic App Settings Service provides an easy way to consume Baasic App Settings REST API.
  * @copyright (c) 2015 Mono-Software
  * @license MIT
  * @author Mono-Software
@@ -14,11 +11,16 @@
     module.service('baasicApplicationSettingsService', ['baasicApiHttp', 'baasicApiService', 'baasicConstants', 'baasicApplicationSettingsRouteService',
         function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
+                /**
+                * Provides direct access to `baasicApplicationSettingsService`.
+                * @method        
+                * @example baasicApplicationSettingsService.routeService.get.expand(expandObject);
+                **/  							    
 				routeService: applicationSettingsRouteService,    
-                 /**
-                 * Returns a promise that is resolved once the get action has been performed. Success response returns the application settings resource.
-                 * @method        
-                 * @example 
+                /**
+                * Returns a promise that is resolved once the get action has been performed. Success response returns the application settings resource.
+                * @method        
+                * @example 
 baasicApplicationSettingsService.get()
 .success(function (data) {
   // perform success action here
@@ -26,7 +28,7 @@ baasicApplicationSettingsService.get()
 .error(function (response, status, headers, config) {
   // perform error handling here
 });
-                 **/  				
+                **/  				
                 get: function (options) {
                     return baasicApiHttp.get(applicationSettingsRouteService.get.expand(baasicApiService.getParams(options)))
                         .success(function (appSettings) {
@@ -34,7 +36,7 @@ baasicApplicationSettingsService.get()
                         });
                 },
                  /**
-                 * Returns a promise that is resolved once the update application settings action has been performed.
+                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource.
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.
@@ -89,7 +91,7 @@ baasicApplicationSettingsService.activate(existingResource)
                     return baasicApiHttp.put(model.links('activate').href);
 				},
                  /**
-                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application deactivated.
+                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated.
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 

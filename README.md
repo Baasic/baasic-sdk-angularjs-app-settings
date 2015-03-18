@@ -31,64 +31,6 @@ To be able to use the library you will need to add the Baasic (_baasic.appSettin
 ```javascript
 angular.module('my-module', ["baasic.api", "baasic.appSettings"])
 ```
-
-## App Settings Module
-
-Baasic AngularJS App Settings services and their functions can be found bellow. For further details please check the [API documentation](#tba)
-
-##### applicationSettingsService
-
-Baasic App Settings Service provides an easy way to consume Baasic App Settings REST routes.
-
-* `get` - Gets application settings
-* `update` - Updates application settings
-* `remove` - Removes application settings
-* `activate` - Activates application settings
-* `deactivate` - Deactivates application settings
-* `routeService` - Provides direct access to `applicationSettingsRouteService`
-
-Here are a few examples on how to use the `applicationSettingsService`:
-
-```javascript
-baasicAapplicationSettingsService.get()
-    .success(function(data) {
-        // data variable contains application settings object
-    });
-```
-
-```javascript
-baasicAapplicationSettingsService.deactivate(appSettingsObject)
-    .success(function(data) {
-        // on application deactivated
-    });
-```
-
-For functions such as `remove` and `activate` that don't use `applicationSettingsRouteService` for obtaining route templates, routes can be obtained from application settings (HAL enabled) objects like this:
-
-```javascript
-var params = baasicApiService.removeParams(appSettingsObject);
-var uri = params["model"].links('delete').href;
-// i.e. if the appSettingsObject had the following id: "73a22b5d-e5ef-44f2-9c81-a3fb01063f86"
-// the uri would yield "/applications/73a22b5d-e5ef-44f2-9c81-a3fb01063f86"
-```
-
-##### applicationSettingsRouteService
-
-Baasic App Settings Route Service provides Baasic route templates which can then be expanded to Baasic REST URI's through the [URI Template](https://github.com/Baasic/uritemplate-js) by providing it with an object that contains URI parameters. `baasiAapplicationSettingsService` uses `applicationSettingsRouteService` to obtain a part of needed routes while the other part is obtained through HAL. `applicationSettingsRouteService` by convention uses the same function names as `baasiAapplicationSettingsService`.
-
-Here is a list of all the `applicationSettingsRouteService` functions:
-
-* `get`, `update`
-* `parse` - Provides direct access to the `uriTemplateService`
-
-URI templates can be expanded manually like this:
-
-```javascript
-var params = { searchQuery: "myQuery", page: 4, rpp: 3 };
-var uri = baasicApplicationSettingsRouteService.find.expand(params);
-// uri will yield "/applications/?searchQuery=myQuery&page=4&rpp=3"
-```
-
 ## Build Process
 
 1. Install [NodeJs](http://nodejs.org/download/)

@@ -1,14 +1,10 @@
 (function (angular, undefined) { /* exported module */
 
     /** 
-     * @overview The angular.module is a global place for creating, registering or retrieving modules. All modules should be registered in an application using this mechanism.
+     * @description The angular.module is a global place for creating, registering or retrieving modules. All modules should be registered in an application using this mechanism. An angular module is a container for the different parts of your app - services, directives etc. In order to use `baasic.appSettings` module functionality it must be added as a dependency to your app.
      * @copyright (c) 2015 Mono-Software
      * @license MIT
      * @author Mono-Software
-     */
-
-    /**
-     * An angular module is a container for the different parts of your app - services, directives etc. In order to use baasic.appSettings module functionality it must be added as a dependency to your app.
      * @module baasic.appSettings
      * @example
      (function (Main) {
@@ -32,10 +28,7 @@
     /* globals module */
     /**
      * @module baasicApplicationSettingsRouteService
-     **/
-
-    /** 
-     * @overview Application settings route service.
+     * @description Baasic App Settings Route Service provides Baasic route templates which can then be expanded to Baasic REST URI's through the [URI Template](https://github.com/Baasic/uritemplate-js) by providing it with an object that contains URI parameters. `baasiAapplicationSettingsService` uses `baasicApplicationSettingsRouteService` to obtain a part of needed routes while the other part is obtained through HAL. Route services by convention use the same function names as their corresponding services.
      * @copyright (c) 2015 Mono-Software
      * @license MIT
      * @author Mono-Software
@@ -67,10 +60,7 @@
     }(angular, module)); /* globals module */
     /**
      * @module baasicApplicationSettingsService
-     **/
-
-    /** 
-     * @overview Application settings service.
+     * @description Baasic App Settings Service provides an easy way to consume Baasic App Settings REST API.
      * @copyright (c) 2015 Mono-Software
      * @license MIT
      * @author Mono-Software
@@ -79,6 +69,11 @@
         'use strict';
         module.service('baasicApplicationSettingsService', ['baasicApiHttp', 'baasicApiService', 'baasicConstants', 'baasicApplicationSettingsRouteService', function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
+                /**
+                 * Provides direct access to `baasicApplicationSettingsService`.
+                 * @method        
+                 * @example baasicApplicationSettingsService.routeService.get.expand(expandObject);
+                 **/
                 routeService: applicationSettingsRouteService,
                 /**
                  * Returns a promise that is resolved once the get action has been performed. Success response returns the application settings resource.
@@ -98,7 +93,7 @@
                     });
                 },
                 /**
-                 * Returns a promise that is resolved once the update application settings action has been performed.
+                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource.
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
@@ -153,7 +148,7 @@
                     return baasicApiHttp.put(model.links('activate').href);
                 },
                 /**
-                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application deactivated.
+                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated.
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
