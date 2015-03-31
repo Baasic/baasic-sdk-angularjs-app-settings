@@ -52,7 +52,7 @@
                 /**
                  * Parses and expands URI templates based on [RFC6570](http://tools.ietf.org/html/rfc6570) specifications. For more information please visit the project [GitHub](https://github.com/Baasic/uritemplate-js) page.
                  * @method
-                 * @example baasicApplicationSettingsRouteService.parse("route/{?embed,fields,options}").expand({embed: "embeddedResource"});
+                 * @example baasicApplicationSettingsRouteService.parse("route/{?embed,fields,options}").expand({embed: "<embedded-resource>"});
                  **/
                 parse: uriTemplateService.parse
             };
@@ -93,7 +93,11 @@
                     });
                 },
                 /**
-                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource.
+                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `update` route can be obtained from application settings (HAL enabled) objects like this:
+                 ```
+                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var uri = params["model"].links('put').href;
+                 ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
@@ -112,7 +116,11 @@
                     return baasicApiHttp.put(model.links('put').href, model);
                 },
                 /**
-                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the resource is permanently removed from the system.
+                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `remove` route can be obtained from application settings (HAL enabled) objects like this:
+                 ```
+                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var uri = params["model"].links('delete').href;
+                 ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
@@ -130,7 +138,11 @@
                     return baasicApiHttp.delete(model.links('delete').href);
                 },
                 /**
-                 * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated.
+                 * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `activate` route can be obtained from application settings (HAL enabled) objects like:
+                 ```
+                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var uri = params["model"].links('activate').href;
+                 ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
@@ -148,7 +160,11 @@
                     return baasicApiHttp.put(model.links('activate').href);
                 },
                 /**
-                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated.
+                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `deactivate` route can be obtained from application settings (HAL enabled) objects like this:
+                 ```
+                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var uri = params["model"].links('deactivate').href;
+                 ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
