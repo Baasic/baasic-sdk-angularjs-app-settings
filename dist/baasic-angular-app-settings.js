@@ -70,7 +70,7 @@
         module.service('baasicApplicationSettingsService', ['baasicApiHttp', 'baasicApiService', 'baasicConstants', 'baasicApplicationSettingsRouteService', function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
                 /**
-                 * Provides direct access to `baasicApplicationSettingsService`.
+                 * Provides direct access to `baasicApplicationSettingsRouteService`.
                  * @method        
                  * @example baasicApplicationSettingsService.routeService.get.expand(expandObject);
                  **/
