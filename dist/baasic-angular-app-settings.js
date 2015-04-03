@@ -28,10 +28,7 @@
     /* globals module */
     /**
      * @module baasicApplicationSettingsRouteService
-     * @description Baasic App Settings Route Service provides Baasic route templates which can then be expanded to Baasic REST URI's through the [URI Template](https://github.com/Baasic/uritemplate-js) by providing it with an object that contains URI parameters. `baasiAapplicationSettingsService` uses `baasicApplicationSettingsRouteService` to obtain a part of needed routes while the other part is obtained through HAL. Route services by convention use the same function names as their corresponding services.
-     * @copyright (c) 2015 Mono
-     * @license MIT
-     * @author Mono
+     * @description Baasic App Settings Route Service provides Baasic route templates which can be expanded to Baasic REST URIs. Various services can use Baasic App Settings Route Service to obtain a needed routes while some routes will be obtained through HAL. By convention, all route services  use the same function names as their corresponding services.
      */
     (function (angular, module, undefined) {
         'use strict';
@@ -57,13 +54,21 @@
                 parse: uriTemplateService.parse
             };
         }]);
-    }(angular, module)); /* globals module */
+    }(angular, module));
     /**
-     * @module baasicApplicationSettingsService
-     * @description Baasic App Settings Service provides an easy way to consume Baasic App Settings REST API.
      * @copyright (c) 2015 Mono
      * @license MIT
      * @author Mono
+     * @overview 
+     ***Notes:**
+     - Refer to the [REST API documentation](https://github.com/Baasic/baasic-rest-api/wiki) for detailed information about Baasic REST API end-points.
+     - [URI Template](https://github.com/Baasic/uritemplate-js) syntax enables expanding the Baasic route templates to Baasic REST URIs providing it with an object that contains URI parameters.
+     - All end-point objects are transformed by the associated route service.
+     */
+    /* globals module */
+    /**
+     * @module baasicApplicationSettingsService
+     * @description Baasic App Settings Service provides an easy way to consume Baasic App Settings REST API. In order to obtain a needed routes `baasicApplicationSettingsService` uses `baasicApplicationSettingsRouteService`.
      */
     (function (angular, module, undefined) {
         'use strict';
@@ -95,14 +100,14 @@
                 /**
                  * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `update` route can be obtained from application settings (HAL enabled) objects like this:
                  ```
-                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var params = baasicApiService.removeParams(appSettings);
                  var uri = params["model"].links('put').href;
                  ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 existingResource.allowAnyOrigin = true;
-                 baasicApplicationSettingsService.update(existingResource)
+                 appSettings.allowAnyOrigin = true;
+                 baasicApplicationSettingsService.update(appSettings)
                  .success(function (data) {
                  // perform success action here
                  })
@@ -118,13 +123,13 @@
                 /**
                  * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `remove` route can be obtained from application settings (HAL enabled) objects like this:
                  ```
-                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var params = baasicApiService.removeParams(appSettings);
                  var uri = params["model"].links('delete').href;
                  ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 baasicApplicationSettingsService.remove(existingResource)
+                 baasicApplicationSettingsService.remove(appSettings)
                  .success(function (data) {
                  // perform success action here
                  })
@@ -140,13 +145,13 @@
                 /**
                  * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `activate` route can be obtained from application settings (HAL enabled) objects like:
                  ```
-                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var params = baasicApiService.removeParams(appSettings);
                  var uri = params["model"].links('activate').href;
                  ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 baasicApplicationSettingsService.activate(existingResource)
+                 baasicApplicationSettingsService.activate(appSettings)
                  .success(function (data) {
                  // perform success action here
                  })
@@ -162,13 +167,13 @@
                 /**
                  * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `deactivate` route can be obtained from application settings (HAL enabled) objects like this:
                  ```
-                 var params = baasicApiService.removeParams(appSettingsObject);
+                 var params = baasicApiService.removeParams(appSettings);
                  var uri = params["model"].links('deactivate').href;
                  ```
                  * @method        
                  * @example 
                  // Existing resource is a resource previously fetched using get action.
-                 baasicApplicationSettingsService.deactivate(existingResource)
+                 baasicApplicationSettingsService.deactivate(appSettings)
                  .success(function (data) {
                  // perform success action here
                  })
@@ -184,4 +189,14 @@
             };
         }]);
     }(angular, module));
+
+    /**
+     * @copyright (c) 2015 Mono
+     * @license MIT
+     * @author Mono
+     * @overview 
+     ***Notes:**
+     - Refer to the [REST API documentation](https://github.com/Baasic/baasic-rest-api/wiki) for detailed information about Baasic REST API end-points.
+     - All end-point objects are transformed by the associated route service.
+     */
 })(angular);
