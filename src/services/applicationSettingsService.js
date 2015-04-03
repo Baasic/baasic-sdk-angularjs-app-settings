@@ -38,14 +38,14 @@ baasicApplicationSettingsService.get()
                  /**
                  * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `update` route can be obtained from application settings (HAL enabled) objects like this:
 ```
-var params = baasicApiService.removeParams(appSettingsObject);
+var params = baasicApiService.removeParams(appSettings);
 var uri = params["model"].links('put').href;				 
 ```
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.
-existingResource.allowAnyOrigin = true;
-baasicApplicationSettingsService.update(existingResource)
+appSettings.allowAnyOrigin = true;
+baasicApplicationSettingsService.update(appSettings)
 .success(function (data) {
   // perform success action here
 })
@@ -61,13 +61,13 @@ baasicApplicationSettingsService.update(existingResource)
                  /**
                  * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `remove` route can be obtained from application settings (HAL enabled) objects like this:
 ```
-var params = baasicApiService.removeParams(appSettingsObject);
+var params = baasicApiService.removeParams(appSettings);
 var uri = params["model"].links('delete').href;				 
 ```				 
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 
-baasicApplicationSettingsService.remove(existingResource)
+baasicApplicationSettingsService.remove(appSettings)
 .success(function (data) {
   // perform success action here
 })
@@ -83,13 +83,13 @@ baasicApplicationSettingsService.remove(existingResource)
                  /**
                  * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `activate` route can be obtained from application settings (HAL enabled) objects like:
 ```
-var params = baasicApiService.removeParams(appSettingsObject);
+var params = baasicApiService.removeParams(appSettings);
 var uri = params["model"].links('activate').href;				 
 ```				 
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 
-baasicApplicationSettingsService.activate(existingResource)
+baasicApplicationSettingsService.activate(appSettings)
 .success(function (data) {
   // perform success action here
 })
@@ -105,13 +105,13 @@ baasicApplicationSettingsService.activate(existingResource)
                  /**
                  * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `deactivate` route can be obtained from application settings (HAL enabled) objects like this:
 ```
-var params = baasicApiService.removeParams(appSettingsObject);
+var params = baasicApiService.removeParams(appSettings);
 var uri = params["model"].links('deactivate').href;				 
 ```				 
                  * @method        
                  * @example 
 // Existing resource is a resource previously fetched using get action.				 
-baasicApplicationSettingsService.deactivate(existingResource)
+baasicApplicationSettingsService.deactivate(appSettings)
 .success(function (data) {
   // perform success action here
 })

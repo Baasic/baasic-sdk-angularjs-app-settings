@@ -1,6 +1,6 @@
 # Baasic App Settings AngularJS SDK
 
-Baasic AngularJS App Settings library provides access to application settings Baasic Service [REST API](https://api.baasic.com/vX).
+Baasic AngularJS App Settings library provides access to [Baasic REST API](https://api.baasic.com/beta) application settings end-points.
 
 ## Dependencies
 
@@ -39,4 +39,4 @@ angular.module('my-module', ["baasic.api", "baasic.appSettings"])
 * Please [report](../../../baasic-sdk-angularjs-app-settings/issues) any issues you might have found
 * Help us write the documentation
 * Create interesting apps using SDK
-* Looking for something else to do? Get in touch..
+* Looking for something else to do? Get in <u>touch</u> ...
