@@ -56,7 +56,7 @@ baasicApplicationSettingsService.update(appSettings)
                     return baasicApiHttp.put(model.links('put').href, model);
                 },
                  /**
-                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
+                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. Please note that data is irreversibly lost; this action can only be executed by account owners. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
 ```
 var params = baasicApiService.removeParams(appSettings);
 var uri = params['model'].links('delete').href;				 
