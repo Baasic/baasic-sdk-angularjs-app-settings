@@ -39,7 +39,7 @@ baasicApplicationSettingsService.get()
                  * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `update` route can be obtained from application settings (HAL enabled) objects like this:
 ```
 var params = baasicApiService.removeParams(appSettings);
-var uri = params["model"].links('put').href;				 
+var uri = params['model'].links('put').href;				 
 ```
                  * @method        
                  * @example 
@@ -62,7 +62,7 @@ baasicApplicationSettingsService.update(appSettings)
                  * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `remove` route can be obtained from application settings (HAL enabled) objects like this:
 ```
 var params = baasicApiService.removeParams(appSettings);
-var uri = params["model"].links('delete').href;				 
+var uri = params['model'].links('delete').href;				 
 ```				 
                  * @method        
                  * @example 
@@ -84,7 +84,7 @@ baasicApplicationSettingsService.remove(appSettings)
                  * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `activate` route can be obtained from application settings (HAL enabled) objects like:
 ```
 var params = baasicApiService.removeParams(appSettings);
-var uri = params["model"].links('activate').href;				 
+var uri = params['model'].links('activate').href;				 
 ```				 
                  * @method        
                  * @example 
@@ -106,7 +106,7 @@ baasicApplicationSettingsService.activate(appSettings)
                  * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `deactivate` route can be obtained from application settings (HAL enabled) objects like this:
 ```
 var params = baasicApiService.removeParams(appSettings);
-var uri = params["model"].links('deactivate').href;				 
+var uri = params['model'].links('deactivate').href;				 
 ```				 
                  * @method        
                  * @example 
