@@ -33,7 +33,7 @@ baasicApplicationSettingsService.get()
                         });
                 },
                  /**
-                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `update` route can be obtained from application settings (HAL enabled) objects like this:
+                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects::
 ```
 var params = baasicApiService.removeParams(appSettings);
 var uri = params['model'].links('put').href;				 
@@ -56,7 +56,7 @@ baasicApplicationSettingsService.update(appSettings)
                     return baasicApiHttp.put(model.links('put').href, model);
                 },
                  /**
-                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `remove` route can be obtained from application settings (HAL enabled) objects like this:
+                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
 ```
 var params = baasicApiService.removeParams(appSettings);
 var uri = params['model'].links('delete').href;				 
@@ -78,7 +78,7 @@ baasicApplicationSettingsService.remove(appSettings)
                     return baasicApiHttp.delete(model.links('delete').href);
                 },
                  /**
-                 * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `activate` route can be obtained from application settings (HAL enabled) objects like:
+                 * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
 ```
 var params = baasicApiService.removeParams(appSettings);
 var uri = params['model'].links('activate').href;				 
@@ -100,7 +100,7 @@ baasicApplicationSettingsService.activate(appSettings)
                     return baasicApiHttp.put(model.links('activate').href);
 				},
                  /**
-                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `deactivate` route can be obtained from application settings (HAL enabled) objects like this:
+                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
 ```
 var params = baasicApiService.removeParams(appSettings);
 var uri = params['model'].links('deactivate').href;				 
