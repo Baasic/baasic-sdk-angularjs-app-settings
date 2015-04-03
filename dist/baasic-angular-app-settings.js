@@ -49,7 +49,7 @@
                 /**
                  * Parses and expands URI templates based on [RFC6570](http://tools.ietf.org/html/rfc6570) specifications. For more information please visit the project [GitHub](https://github.com/Baasic/uritemplate-js) page.
                  * @method
-                 * @example baasicApplicationSettingsRouteService.parse("route/{?embed,fields,options}").expand({embed: "<embedded-resource>"});
+                 * @example baasicApplicationSettingsRouteService.parse('<route>/{?embed,fields,options}').expand({embed: '<embedded-resource>'});
                  **/
                 parse: uriTemplateService.parse
             };
@@ -65,6 +65,7 @@
      - [URI Template](https://github.com/Baasic/uritemplate-js) syntax enables expanding the Baasic route templates to Baasic REST URIs providing it with an object that contains URI parameters.
      - All end-point objects are transformed by the associated route service.
      */
+
     /* globals module */
     /**
      * @module baasicApplicationSettingsService
@@ -98,10 +99,10 @@
                     });
                 },
                 /**
-                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `update` route can be obtained from application settings (HAL enabled) objects like this:
+                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects::
                  ```
                  var params = baasicApiService.removeParams(appSettings);
-                 var uri = params["model"].links('put').href;
+                 var uri = params['model'].links('put').href;
                  ```
                  * @method        
                  * @example 
@@ -121,10 +122,10 @@
                     return baasicApiHttp.put(model.links('put').href, model);
                 },
                 /**
-                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `remove` route can be obtained from application settings (HAL enabled) objects like this:
+                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed the application resource is permanently removed from the system. Please note that data is irreversibly lost; this action can only be executed by account owners. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
                  ```
                  var params = baasicApiService.removeParams(appSettings);
-                 var uri = params["model"].links('delete').href;
+                 var uri = params['model'].links('delete').href;
                  ```
                  * @method        
                  * @example 
@@ -143,10 +144,10 @@
                     return baasicApiHttp.delete(model.links('delete').href);
                 },
                 /**
-                 * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `activate` route can be obtained from application settings (HAL enabled) objects like:
+                 * Returns a promise that is resolved once the activate action has been performed. If the action is successfully completed the application is activated. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
                  ```
                  var params = baasicApiService.removeParams(appSettings);
-                 var uri = params["model"].links('activate').href;
+                 var uri = params['model'].links('activate').href;
                  ```
                  * @method        
                  * @example 
@@ -165,10 +166,10 @@
                     return baasicApiHttp.put(model.links('activate').href);
                 },
                 /**
-                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This function doesn't use `baasicApplicationSettingsRouteService` for obtaining route templates, however `deactivate` route can be obtained from application settings (HAL enabled) objects like this:
+                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed the application is deactivated. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template, here is an example of how a route can be obtained from HAL enabled objects:
                  ```
                  var params = baasicApiService.removeParams(appSettings);
-                 var uri = params["model"].links('deactivate').href;
+                 var uri = params['model'].links('deactivate').href;
                  ```
                  * @method        
                  * @example 
@@ -199,4 +200,5 @@
      - Refer to the [REST API documentation](https://github.com/Baasic/baasic-rest-api/wiki) for detailed information about Baasic REST API end-points.
      - All end-point objects are transformed by the associated route service.
      */
+
 })(angular);
