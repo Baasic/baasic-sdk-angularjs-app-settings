@@ -28,7 +28,7 @@
     /* globals module */
     /**
      * @module baasicApplicationSettingsRouteService
-     * @description Baasic App Settings Route Service provides Baasic route templates which can be expanded to Baasic REST URIs. Various services can use Baasic App Settings Route Service to obtain a needed routes while other routes will be obtained through HAL. By convention, all route services  use the same function names as their corresponding services.
+     * @description Baasic Application Settings Route Service provides Baasic route templates which can be expanded to Baasic REST URIs. Various services can use Baasic Application Settings Route Service to obtain a needed routes while other routes will be obtained through HAL. By convention, all route services  use the same function names as their corresponding services.
      */
     (function (angular, module, undefined) {
         'use strict';
@@ -69,18 +69,12 @@
     /* globals module */
     /**
      * @module baasicApplicationSettingsService
-     * @description Baasic App Settings Service provides an easy way to consume Baasic App Settings REST API. In order to obtain a needed routes `baasicApplicationSettingsService` uses `baasicApplicationSettingsRouteService`.
+     * @description Baasic Application Settings Service provides an easy way to consume Baasic Application Settings REST API end-points. In order to obtain a needed routes `baasicApplicationSettingsService` uses `baasicApplicationSettingsRouteService`.
      */
     (function (angular, module, undefined) {
         'use strict';
         module.service('baasicApplicationSettingsService', ['baasicApiHttp', 'baasicApiService', 'baasicConstants', 'baasicApplicationSettingsRouteService', function (baasicApiHttp, baasicApiService, baasicConstants, applicationSettingsRouteService) {
             return {
-                /**
-                 * Provides direct access to `baasicApplicationSettingsRouteService`.
-                 * @method        
-                 * @example baasicApplicationSettingsService.routeService.get.expand(expandObject);
-                 **/
-                routeService: applicationSettingsRouteService,
                 /**
                  * Returns a promise that is resolved once the get action has been performed. Success response returns the application settings resource.
                  * @method        
@@ -122,7 +116,7 @@
                     return baasicApiHttp.put(model.links('put').href, model);
                 },
                 /**
-                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed, the application resource will be permanently removed from the system. Please note that data will be irreversibly lost once the action is successfully completed so it can only be executed by account owners. This route uses HAL enabled objects to obtain routes and therefore it doesn't apply `baasicApplicationSettingsRouteService` route template. Here is an example of how a route can be obtained from HAL enabled objects:
+                 * Returns a promise that is resolved once the remove action has been performed. If the action is successfully completed, the application resource will be permanently removed from the system. Please note that data will be irreversibly lost once the action is successfully completed and therefore it can only be executed by user assigned to account owner role. This route uses HAL enabled objects to obtain routes and therefore it doesn't apply `baasicApplicationSettingsRouteService` route template. Here is an example of how a route can be obtained from HAL enabled objects:
                  ```
                  var params = baasicApiService.removeParams(appSettings);
                  var uri = params['model'].links('delete').href;
@@ -166,7 +160,7 @@
                     return baasicApiHttp.put(model.links('activate').href);
                 },
                 /**
-                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed, the application will be deactivated. This route uses HAL enabled objects to obtain routes and therefore it doesn't apply `baasicApplicationSettingsRouteService` route template. Here is an example of how a route can be obtained from HAL enabled objects:
+                 * Returns a promise that is resolved once the deactivate action has been performed. If the action is successfully completed, the application will be deactivated. Note that once the application is deactivated it can only be accessed through the Baasic Dashboard. This route uses HAL enabled objects to obtain routes and therefore it doesn't apply `baasicApplicationSettingsRouteService` route template. Here is an example of how a route can be obtained from HAL enabled objects:
                  ```
                  var params = baasicApiService.removeParams(appSettings);
                  var uri = params['model'].links('deactivate').href;
@@ -186,7 +180,13 @@
                     var params = baasicApiService.updateParams(data);
                     var model = params[baasicConstants.modelPropertyName];
                     return baasicApiHttp.put(model.links('deactivate').href);
-                }
+                },
+                /**
+                 * Provides direct access to `baasicApplicationSettingsRouteService`.
+                 * @method        
+                 * @example baasicApplicationSettingsService.routeService.get.expand(expandObject);
+                 **/
+                routeService: applicationSettingsRouteService
             };
         }]);
     }(angular, module));

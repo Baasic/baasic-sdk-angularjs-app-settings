@@ -1,10 +1,10 @@
-# Baasic App Settings AngularJS SDK
+# Baasic Application Settings AngularJS SDK
 
 Baasic AngularJS App Settings library provides access to [Baasic REST API](https://api.baasic.com/beta) application settings end-points.
 
 ## Dependencies
 
-Baasic AngularJS App Settings library has the following dependencies:
+Baasic AngularJS Application Settings library has the following dependencies:
 
 * [Baasic Core AngularJS SDK](../../../baasic-sdk-angularjs-core)
 
@@ -12,10 +12,10 @@ Baasic AngularJS App Settings library has the following dependencies:
 
 ### Adding the Library to your Project
 
-Please add the _Baasic App Settings_ include after the _Baasic Angular Core_ include:
+Please add the _Baasic Application Settings_ include after the _Baasic Angular Core_ include:
 
 ```html
-<script src='/js/baasic-angular-1.0.0.min.js'></script>
+<script src='/js/baasic-angular-core-1.0.0.min.js'></script>
 <script src='/js/baasic-angular-app-settings-1.0.0.min.js'></script>
 ```
 ### Initialization
