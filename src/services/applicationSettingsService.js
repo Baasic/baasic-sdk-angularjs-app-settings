@@ -1,7 +1,7 @@
 ﻿/* globals module */
 /**
  * @module baasicApplicationSettingsService
- * @description Baasic Application Settings Service provides an easy way to consume Baasic Application Settings REST API end-points. In order to obtain a needed routes `baasicApplicationSettingsService` uses `baasicApplicationSettingsRouteService`.
+ * @description Baasic Application Settings Service provides an easy way to consume Baasic Application Settings REST API end-points. In order to obtain needed routes `baasicApplicationSettingsService` uses `baasicApplicationSettingsRouteService`.
 */
 (function (angular, module, undefined) {
     'use strict';
@@ -27,7 +27,7 @@ baasicApplicationSettingsService.get()
                         });
                 },
                  /**
-                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template. Here is an example of how a route can be obtained from HAL enabled objects::
+                 * Returns a promise that is resolved once the update application settings action has been performed. This action updates the application setting resource. This route uses HAL enabled objects to obtain routes and therefore it doesn't use `baasicApplicationSettingsRouteService` route template. Here is an example of how a route can be obtained from HAL enabled objects:
 ```
 var params = baasicApiService.removeParams(appSettings);
 var uri = params['model'].links('put').href;				 
@@ -56,9 +56,6 @@ baasicApplicationSettingsService.update(appSettings)
 }(angular, module));
 
 /**
- * @copyright (c) 2015 Mono
- * @license MIT
- * @author Mono
  * @overview 
  ***Notes:**
  - Refer to the [REST API documentation](https://github.com/Baasic/baasic-rest-api/wiki) for detailed information about available Baasic REST API end-points.
