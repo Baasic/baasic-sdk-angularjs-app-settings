@@ -1,3 +1,8 @@
+/*
+ Baasic AngularJS App Settings v0.9.0
+ (c) 2014-2016 Mono http://baasic.com
+ License: MIT
+*/
 (function (angular, undefined) { /* exported module */
 
     /** 
