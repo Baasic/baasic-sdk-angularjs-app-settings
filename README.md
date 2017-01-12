@@ -1,6 +1,6 @@
 # Baasic Application Settings AngularJS SDK
 
-Baasic AngularJS App Settings library provides access to [Baasic REST API](https://api.baasic.com/beta) application settings end-points.
+Baasic AngularJS App Settings library provides access to [Baasic REST API](http://dev.baasic.com/api/reference/home) application settings end-points.
 
 ## Dependencies
 
